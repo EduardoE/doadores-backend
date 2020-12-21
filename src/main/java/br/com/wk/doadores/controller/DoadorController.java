@@ -70,7 +70,7 @@ public class DoadorController {
 		return percentualObesos.calculaPercentualObesos(doadores);
 	}
 	
-	@GetMapping("/tipoSanguineo")
+	@GetMapping("/media-idade-tiposanguineo")
 	public List<MediaIdadeDoadoresPorTipoSanguineo> getMediaIdatePorTipoSanguineo() throws ParseException {
 		
 		List<MediaIdadeDoadoresPorTipoSanguineo> mediasIdadePorTipoSanguineo = new ArrayList<MediaIdadeDoadoresPorTipoSanguineo>();

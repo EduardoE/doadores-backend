@@ -11,10 +11,7 @@ public class MediaIdadeDoadoresPorTipoSanguineoService {
 		int somaIdades = 0;
 
 		for (Doador d: doadoresPortipoSanguineo) {
-			System.out.println(d.getTipoSanguineo());
-
-			System.out.println(d.getIdade());
-
+			
 			somaIdades += d.getIdade();
 		}
 		
