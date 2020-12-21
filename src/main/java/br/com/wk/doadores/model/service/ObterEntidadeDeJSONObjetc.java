@@ -1,10 +1,10 @@
-package br.com.wk.doadores.services;
+package br.com.wk.doadores.model.service;
 
 import org.json.JSONObject;
 
-import br.com.wk.doadores.model.entities.Contato;
-import br.com.wk.doadores.model.entities.Doador;
-import br.com.wk.doadores.model.entities.Endereco;
+import br.com.wk.doadores.model.entity.Contato;
+import br.com.wk.doadores.model.entity.Doador;
+import br.com.wk.doadores.model.entity.Endereco;
 
 public class ObterEntidadeDeJSONObjetc {
 	public Doador obterDoadorDeJSONObject(JSONObject jsonObject) {
@@ -20,7 +20,7 @@ public class ObterEntidadeDeJSONObjetc {
 			d.setPai(jsonObject.getString("pai"));
 			d.setAltura(jsonObject.getDouble("altura"));
 			d.setPeso(jsonObject.getDouble("peso"));
-			d.setTipo_sanguineo(jsonObject.getString("tipo_sanguineo"));
+			d.setTipoSanguineo(jsonObject.getString("tipo_sanguineo"));
 			
 			return d;
 		} catch(Exception e) {

@@ -1,4 +1,4 @@
-package br.com.wk.doadores.model.entities;
+package br.com.wk.doadores.model.entity;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;

@@ -1,4 +1,8 @@
-package br.com.wk.doadores.model.entities;
+package br.com.wk.doadores.model.entity;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -142,11 +146,11 @@ public class Doador {
 		this.endereco = endereco;
 	}
 
-	public String getTipo_sanguineo() {
+	public String getTipoSanguineo() {
 		return tipo_sanguineo;
 	}
 
-	public void setTipo_sanguineo(String tipo_sanguineo) {
+	public void setTipoSanguineo(String tipo_sanguineo) {
 		this.tipo_sanguineo = tipo_sanguineo;
 	}
 	
@@ -160,7 +164,39 @@ public class Doador {
 				+ ", sexo=" + sexo + ", mae=" + mae + ", pai=" + pai + ", peso=" + peso + ", altura=" + altura
 				+ ", tipo_sanguineo=" + tipo_sanguineo + ", endereco=" + endereco + ", contato=" + contato + "]";
 	}
+	
+	public int getIdade() throws ParseException {
+		Date nascimento = new SimpleDateFormat("dd/MM/yyyy").parse(this.getData_nasc());
+		Date dataAtual = new Date();
+        
+		SimpleDateFormat sdfy = new SimpleDateFormat("yyyy");
+        SimpleDateFormat sdfm = new SimpleDateFormat("MM");
+        SimpleDateFormat sdfd = new SimpleDateFormat("dd");
+        
+        int ano1 = Integer.parseInt(sdfy.format(nascimento));
+        int ano2 = Integer.parseInt(sdfy.format(dataAtual));
+        int idade = ano2 - ano1;
+        
+        int mes1 = Integer.parseInt(sdfm.format(nascimento));
+        int mes2 = Integer.parseInt(sdfm.format(dataAtual));
+        
+        int dia1 = Integer.parseInt(sdfd.format(nascimento));
+        int dia2 = Integer.parseInt(sdfd.format(dataAtual));
+        
+        if (mes2 < mes1){
+        	idade --;
+        } else {
+          if(dia2 < dia1){
+        		idade --;
+        	}
+        }
+        return idade;
+	}
+	
+	public double getImc() {
 
+		return this.peso / Math.pow(this.altura, 2); 
+	}
 
 
 }
