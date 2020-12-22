@@ -7,7 +7,7 @@
 - Clonar o projeto
 - Configurar a conexão com o banco mysql (Instalar o mysql caso o mesmo não esteja instalado na máquina)
   
-  Para configurar a conexão, basta editar o arquivo application properties com as seguintes informações:
+ ### Para configurar a conexão, basta editar o arquivo application properties com as seguintes informações:
    
 - spring.datasource.url=jdbc:mysql://localhost:3306/doadores?useTimezone=true&serverTimezone=UTC
 - spring.datasource.username=root (seu usuário mysql)
